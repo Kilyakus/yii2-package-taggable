@@ -51,7 +51,7 @@ class TagsController extends \yii\web\Controller
     public function actions() {
         return [
             'images' => [
-                'class' => 'kilyakus\package\taggable\actions\UploadAction',
+                'class' => 'kilyakus\package\taggable\actions\ListAction',
             ],
         ];
     }
