@@ -7,7 +7,7 @@ use yii\helpers\Html;
 use kilyakus\action\BaseAction as Action;
 use kilyakus\package\taggable\models\Tag;
 
-class ListAction extends Action
+class SearchAction extends Action
 {
     public function run($query)
     {
