@@ -4,9 +4,10 @@ namespace kilyakus\package\taggable\actions;
 use Yii;
 use yii\web\Response;
 use yii\helpers\Html;
+use kilyakus\action\BaseAction as Action;
 use kilyakus\package\taggable\models\Tag;
 
-class ListAction extends \kilyakus\action\BaseAction
+class ListAction extends Action
 {
     public function run($query)
     {
