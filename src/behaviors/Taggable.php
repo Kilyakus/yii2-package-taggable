@@ -52,7 +52,7 @@ class Taggable extends \yii\base\Behavior
 
     public function afterSave()
     {
-        if(!$this->owner->isNewRecord) {
+        if(!$this->owner->isNewRecord && $this->owner->tagNames || !$this->owner->tagNames) {
             $this->beforeDelete();
         }
 
@@ -65,6 +65,7 @@ class Taggable extends \yii\base\Behavior
                     $tag = new Tag(['name' => $name]);
                 }
                 $tag->frequency++;
+
                 if ($tag->save()) {
                     $updatedTags[] = $tag;
                     $tagAssigns[] = [$modelClass, $this->owner->primaryKey, $tag->tag_id];
@@ -93,11 +94,6 @@ class Taggable extends \yii\base\Behavior
         TagAssign::deleteAll(['class' => get_class($this->owner), 'item_id' => $this->owner->primaryKey]);
     }
 
-    /**
-     * Filters tags.
-     * @param string|string[] $values
-     * @return string[]
-     */
     public function filterTagValues($values)
     {
         return array_unique(preg_split(
