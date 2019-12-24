@@ -1,6 +1,10 @@
 # yii2-package-taggable
 
-How to use:
+#How to use:
+
+if u use yii2-module-base, just import "kilyakus\package\taggable\TaggableModule" on the modules page
+
+#In all other cases:
 
 add this to your config:
 
