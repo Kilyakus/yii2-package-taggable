@@ -14,9 +14,11 @@ add this to your config:
     'class' => 'kilyakus\package\taggable\TaggableModule',
 ],
 
-----------------------------------------------------------------------------
+and use '/tags/list/index?query=' link to get tags
 
-and use Url::to(['/tags/list/search', 'query' => '...']) to get tags, or add
+# Or
+
+add this to your controller.
 
 ----------------------------------------------------------------------------
 
@@ -29,19 +31,4 @@ public function actions()
     ];
 }
 
-----------------------------------------------------------------------------
-
-to your controller.
-
-
-
-
-Or just use:
-
-----------------------------------------------------------------------------
-
-extends \kilyakus\package\taggable\controllers\ListController
-
-----------------------------------------------------------------------------
-
-if u like crutches.
+and use '/...(your controller page)/list/index?query=' link to get tags
