@@ -1,6 +1,9 @@
 <?php
 namespace kilyakus\package\taggable\models;
 
+use Yii;
+use yii\data\ActiveDataProvider;
+
 class Tag extends \kilyakus\modules\components\ActiveRecord
 {
     public static function tableName()
@@ -15,5 +18,22 @@ class Tag extends \kilyakus\modules\components\ActiveRecord
             ['frequency', 'integer'],
             ['name', 'string', 'max' => 64],
         ];
+    }
+
+    public function search($params)
+    {
+        $query = static::find();
+
+        $dataProvider = new ActiveDataProvider(['query' => $query]);
+        $dataProvider->sort->defaultOrder = ['name' => SORT_DESC];
+        $dataProvider->pagination->pageSize = Yii::$app->session->get('per-page', 20);
+
+        if (!($this->load($params) && $this->validate())) {
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere(['like', 'name', $this->name]);
+
+        return $dataProvider;
     }
 }
