@@ -8,7 +8,7 @@ add this to your config:
 
 ```
 'tags' => [
-    'class' => 'kilyakus\package\taggable\TaggableModule',
+	'class' => 'kilyakus\package\taggable\TaggableModule',
 ],
 ```
 
@@ -18,15 +18,15 @@ and use '/tags/list/index?query=' link to get tags
 
 add this to your controller.
 
-----------------------------------------------------------------------------
-
+```
 public function actions()
 {
-    return [
-        'list' => [
-            'class' => \kilyakus\package\taggable\actions\SearchAction::className()
-        ]
-    ];
+	return [
+		'list' => [
+			'class' => \kilyakus\package\taggable\actions\SearchAction::className()
+		]
+	];
 }
+```
 
 and use '/...(your controller page)/list/index?query=' link to get tags
