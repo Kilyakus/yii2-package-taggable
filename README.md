@@ -6,11 +6,11 @@ if u use yii2-module-base, just import "kilyakus\package\taggable\TaggableModule
 
 add this to your config:
 
-----------------------------------------------------------------------------
-
+```
 'tags' => [
     'class' => 'kilyakus\package\taggable\TaggableModule',
 ],
+```
 
 and use '/tags/list/index?query=' link to get tags
 
