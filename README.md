@@ -1,10 +1,10 @@
 # How to use:
 
-if u use yii2-module-base, just import "kilyakus\package\taggable\TaggableModule" on the modules page
+If u are using yii2-module-base, just import "kilyakus\package\taggable\TaggableModule" on the modules page
 
 # In all other cases:
 
-add this to your config:
+Add this to your config:
 
 ```
 'tags' => [
@@ -16,7 +16,7 @@ and use '/tags/list/index?query=' link to get tags
 
 # Or
 
-add this to your controller.
+Add this to your controller.
 
 ```
 public function actions()
