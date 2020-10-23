@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\helpers\StringHelper;
 use kilyakus\widget\grid\GridView;
-use kilyakus\imageprocessor\Image;
+use kilyakus\helper\media\Image;
 use kilyakus\widget\fancybox\Fancybox;
 use kilyakus\web\widgets as Widget;
 use yii\web\JsExpression;
